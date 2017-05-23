@@ -15,7 +15,7 @@ module.exports = function cssTask(config, env) {
   var cssConfig = {
     src: [
       config.root + "/scss/**/*.scss",
-      config.root + "/js/**/*.scss"
+      config.root + "/js/**/*.scss",
     ],
     dest: config.dest + "/css/",
 
