@@ -1,0 +1,392 @@
+#container1, #container2, #container3, #container4, #container5 {
+  cursor: default;
+}
+
+.exhibit-label {
+  font-weight: normal;
+}
+
+/*Chart 1*/
+
+#container1 {
+  text {
+    fill: #ccc;
+    font-size: 14px;
+    cursor: default;
+  }
+  .axis path {
+    fill: none;
+    stroke: none;
+    shape-rendering: crispEdges;
+  }
+}
+
+.axis line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
+
+#container1 {
+  .tick text {
+    fill: gray;
+  }
+  .chartOnetrendline {
+    fill: none;
+  }
+  .gridline line {
+    fill: none;
+    stroke: #ccc;
+    shape-rendering: crispEdges;
+  }
+  .key {
+    cursor: default;
+    shape-rendering: crispEdges;
+  }
+  .infoBubbleData {
+    fill: black;
+  }
+  #infoBubble {
+    fill: white;
+    stroke-width: 2px;
+  }
+  #infoBubbleYear {
+    font-size: 12px;
+  }
+  #infoBubbleGDP {
+    font-size: 19px;
+  }
+  #UnitedStatesline, .UnitedStateschartOneInfoBox {
+    stroke: rgb(162, 83, 35);
+  }
+  #UnitedStateskey, #UnitedStateskeyText, .UnitedStatespoints {
+    fill: rgb(162, 83, 35);
+  }
+  #Franceline, .FrancechartOneInfoBox {
+    stroke: rgb(57, 123, 122);
+  }
+  #Francekey, #FrancekeyText, .Francepoints {
+    fill: rgb(57, 123, 122);
+  }
+  #Swedenline, .SwedenchartOneInfoBox {
+    stroke: rgb(88, 191, 191);
+  }
+  #Swedenkey, #SwedenkeyText, .Swedenpoints {
+    fill: rgb(88, 191, 191);
+  }
+  #Switzerlandline, .SwitzerlandchartOneInfoBox {
+    stroke: rgb(243, 130, 61);
+  }
+  #Switzerlandkey, #SwitzerlandkeyText, .Switzerlandpoints {
+    fill: rgb(243, 130, 61);
+  }
+  #Germany1line {
+    stroke: rgb(23, 85, 132);
+  }
+}
+
+#Germany2line {
+  stroke: rgb(23, 85, 132);
+}
+
+#container1 {
+  .Germany2chartOneInfoBox, .Germany1chartOneInfoBox {
+    stroke: rgb(23, 85, 132);
+  }
+  #Germany1key, #Germany1keyText, .Germany1points {
+    fill: rgb(23, 85, 132);
+  }
+}
+
+.Germany2points {
+  fill: rgb(23, 85, 132);
+}
+
+#container1 {
+  #Netherlandsline, .NetherlandschartOneInfoBox {
+    stroke: rgb(180, 138, 56);
+  }
+  #Netherlandskey, #NetherlandskeyText, .Netherlandspoints {
+    fill: rgb(180, 138, 56);
+  }
+  #Canadaline, .CanadachartOneInfoBox {
+    stroke: rgb(230, 198, 132);
+  }
+  #Canadakey, #CanadakeyText, .Canadapoints {
+    fill: rgb(230, 198, 132);
+  }
+  #UnitedKingdomline, .UnitedKingdomchartOneInfoBox {
+    stroke: rgb(18, 57, 85);
+  }
+  #UnitedKingdomkey, #UnitedKingdomkeyText, .UnitedKingdompoints {
+    fill: rgb(18, 57, 85);
+  }
+  #NewZealandline, .NewZealandchartOneInfoBox {
+    stroke: rgb(31, 127, 201);
+  }
+  #NewZealandkey, #NewZealandkeyText, .NewZealandpoints {
+    fill: rgb(31, 127, 201);
+  }
+  #Norwayline, .NorwaychartOneInfoBox {
+    stroke: rgb(79, 116, 63);
+  }
+  #Norwaykey, #NorwaykeyText, .Norwaypoints {
+    fill: rgb(79, 116, 63);
+  }
+  #Australialine, .AustraliachartOneInfoBox {
+    stroke: rgb(148, 196, 128);
+  }
+  #Australiakey, #AustraliakeyText, .Australiapoints {
+    fill: rgb(148, 196, 128);
+  }
+  .chart1note {
+    fill: black;
+    font-size: 10px;
+  }
+}
+
+/*Chart2*/
+
+#viz-chartTwo {
+  padding: 10px 0 0 0;
+}
+
+#container2 {
+  td {
+    font-size: 16px;
+    text-align: center;
+  }
+  .leftAlign {
+    text-align: left;
+  }
+  #d3TableContainer {
+    color: #808080;
+  }
+  #tableContainer {
+    min-width: 400px;
+    max-width: 1000px;
+    color: rgb(99, 113, 119);
+  }
+  #headerRow {
+    background-color: rgb(17, 73, 131);
+    color: white;
+    th {
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+  #chartTwo {
+    border: 1px solid #CCC;
+    float: right;
+    background-color: white;
+    font-size: 12px;
+  }
+}
+
+#tableSVG {
+  border: 1px solid #CCC;
+  float: right;
+  background-color: white;
+  font-size: 12px;
+}
+
+#container2 {
+  .bar {
+    fill: rgb(238, 123, 59);
+  }
+  #blank0 {
+    display: none;
+  }
+  .softBlue {
+    background-color: rgb(219, 244, 245);
+  }
+  .bookEnd {
+    font-weight: 600;
+    background-color: rgb(180, 233, 230);
+  }
+  .table > tbody > tr > td {
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+.table > thead > tr > th {
+  border-top: none;
+  border-bottom: none;
+}
+
+#container2 {
+  .activeRow {
+    background-color: rgb(237, 249, 250);
+  }
+  .subsectionBar {
+    float: left;
+    clear: left;
+    color: rgb(255, 96, 0);
+    font-weight: 500;
+    font-size: 15px;
+    width: 49%;
+    text-align: left;
+  }
+  #equityNote {
+    padding-left: 10px;
+  }
+  .questionSet {
+    background-color: white;
+    color: black;
+  }
+  .question:hover {
+    background-color: rgb(254, 242, 232);
+  }
+  .selectedQuestion {
+    color: rgb(238, 123, 59);
+    font-size: 15px;
+    float: left;
+    width: 50%;
+    position: relative;
+    top: 50px;
+  }
+  #directions {
+    font-size: 20px;
+    fill: #808080;
+  }
+  .plusMinus {
+    font-size: 20px;
+    color: rgb(3, 195, 190);
+    position: relative;
+    top: 2px;
+    left: 10px;
+  }
+}
+
+/*Chart3*/
+
+#container3 {
+  #controls {
+    margin-bottom: 10px;
+  }
+  #note {
+    fill: black;
+    stroke: none;
+    font-size: 12px;
+  }
+  .alignLeft {
+    text-align: left;
+  }
+  .chartTitle {
+    font-size: 29px;
+  }
+  .btn {
+    margin: 2px 5px 0 5px;
+    padding: 2px 6px 3px 6px;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .selectedBtn {
+    box-shadow: 0 0px 0px rgba(82, 168, 236, 0.8) inset, 0 0 10px rgba(82, 168, 236, 0.8);
+    outline: 0 none;
+    background-color: rgb(232, 244, 244);
+    color: rgb(104, 183, 185);
+  }
+  .avgLine {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+  .avgLabel {
+    fill: #ccc;
+    text-anchor: left;
+    font-size: 18px;
+  }
+  .pointLabel, .point {
+    cursor: pointer;
+  }
+}
+
+/*Chart 4*/
+
+#container4 {
+  .label {
+    cursor: default;
+    font-weight: 300;
+  }
+  #chartTitle {
+    font-size: 29px;
+    fill: black;
+  }
+  .keyText {
+    fill: black;
+    text-anchor: start;
+    font-size: 14px;
+  }
+  .oldPoints, .oldInfoText {
+    fill: rgb(250, 202, 168);
+  }
+  .newPoints, .newInfoText {
+    fill: rgb(243, 123, 49);
+  }
+  .y.axis .domain {
+    stroke-width: 0;
+  }
+  .x.axis .domain {
+    stroke: #808080;
+  }
+  .bar {
+    fill: #ccc;
+  }
+  .btn {
+    margin: 0 5px 0 5px;
+    border-width: 1px;
+    padding: 2px 6px 3px 6px;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .selectedBtn {
+    box-shadow: 0 0px 0px rgba(82, 168, 236, 0.8) inset, 0 0 10px rgba(82, 168, 236, 0.8);
+    outline: 0 none;
+    font-weight: 700;
+  }
+  text {
+    fill: #808080;
+    font-weight: 300;
+  }
+}
+
+#chart4Note {
+  font-size: 10px;
+  fill: black;
+  line-height: 1;
+  padding-top: 3px;
+}
+
+#chart4Holder {
+  bottom: auto !important;
+  top: 0px !important;
+}
+
+#container4 .infoNumber {
+  font-size: 20px;
+}
+
+/*Chart 5*/
+
+#container5 {
+  .y .domain {
+    fill: url(#svgYGradient);
+  }
+  .x .domain {
+    fill: url(#svgXGradient);
+  }
+  .avgLine {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+  .avgLabel {
+    fill: #ccc;
+    font-size: 15px;
+  }
+  .axisText {
+    font-size: 13px;
+  }
+}
