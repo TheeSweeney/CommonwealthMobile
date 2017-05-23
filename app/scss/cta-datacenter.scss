@@ -1,0 +1,75 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+
+.cta-datacenter {
+    display: flex;
+    min-height: 300px;
+    color: white;
+    font-size: 26px;
+    line-height: 33px;
+    background-color: $grey-ededed;
+    background-image: url("../../img/cta-datacenter.png");
+}
+
+
+.cta-datacenter__image {
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: transparent;
+    background-image: url("../../img/cta-datacenter-map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+}
+
+.cta-datacenter__blurb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    text-shadow: 1px 1px 10px $grey-454545;
+}
+
+.cta-datacenter__sub-blurb {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.cta-datacenter__states {
+    display: block;
+    margin: 20px 0;
+
+    > * {
+        // align select and button
+        vertical-align: middle;
+    }
+
+    select.state-select {
+        margin-right: 20px;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $small-breakpoint){
+    .cta-datacenter__image {
+        display: none;
+    }
+    .cta-datacenter__blurb {
+        flex-basis: 100%;
+    }
+}

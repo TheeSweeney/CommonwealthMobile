@@ -1,0 +1,4 @@
+#!/bin/sh
+
+npm install
+process-data St2016_VelirInteractive_25Jan2017.xlsx locations.xlsx Indicators_Inferred.xlsx

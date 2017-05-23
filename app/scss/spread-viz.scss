@@ -1,0 +1,55 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+
+
+
+.js-viz-spread {
+    // padding: 0 25px;
+    position: relative;
+    z-index: 1;
+
+    transition: opacity .5s;
+
+    &.fade {
+        opacity: 0.2;
+        pointer-events: none;
+    }
+
+    h4 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-family: $interface;
+        font-weight: normal;
+        border-bottom: 1px solid $grey-d3d5d7;
+        padding-bottom: 5px;
+        margin: 0 0 10px 0;
+    }
+    .group {
+        margin-bottom: 10px;
+    }
+    .chart {
+        display: inline-block;
+        cursor: pointer;
+        h2 {
+            font-weight: normal;
+            font-size: 10px;
+            margin: 3px 5px;
+            height: 20px;
+        }
+    }
+    svg {
+        path.perf {
+            fill: $grey-808285;
+            stroke: none;
+        }
+        rect.bar {
+            fill: #0C375E;
+            stroke: none;
+        }
+        path.axis {
+            stroke: #aba;
+            stroke-width: 1px;
+            fill: none;
+        }
+    }
+}

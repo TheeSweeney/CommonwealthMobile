@@ -1,0 +1,68 @@
+@import "./_colors.scss";
+
+// div for specificity
+div.location-legend {
+    padding-left: 12px;
+}
+
+.location-legend__title {
+    color: $grey-454545;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.07em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.location-legend__legends {
+
+}
+
+.location-legend__legend {
+
+    display: inline-block;
+    margin-right: 10px;
+
+    color: $grey-454545;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &::before {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+
+
+        border-radius: 3px;
+        content: "";
+    }
+
+    &.improved-full::before {
+        background-color: $good-green;
+    }
+
+    &.improved-half::before {
+        background-color: $good-green-dim;
+    }
+
+    &.steady::before {
+        background-color: $neutral-gray;
+    }
+
+    &.worse-half::before {
+        background-color: $bad-red-dim;
+    }
+
+    &.worse-full::before {
+        background-color: $bad-red;
+    }
+
+    &.medicaid::before {
+        background-color: $medicaid-yellow;
+        border-radius: 50%;
+    }
+
+
+}

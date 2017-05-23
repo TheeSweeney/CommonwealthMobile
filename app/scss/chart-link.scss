@@ -1,0 +1,32 @@
+@import "./_colors.scss";
+
+$showMePadding: 5px;
+
+.chart-link {
+    display: inline-block;
+    margin-left: $showMePadding;
+    margin-right: $showMePadding;
+    padding-left: 0;
+    padding-right: 0;
+    color: $blue-006aa9;
+    background-color: $blue-e8f5fc;
+
+
+    // add padding on new lines to the left and right
+    box-shadow: (-1 * $showMePadding) 0px 0px 0px $blue-e8f5fc,
+                $showMePadding 0px 0px 0px $blue-e8f5fc;
+
+    cursor: pointer;
+
+    &::before {
+        display: inline-block;
+        vertical-align: baseline;
+        width: 13px;
+        height: 11px;
+        margin: 0 4px 0 2px;
+        content: "";
+        transition: transform 500ms;
+        background-image: url("../../img/chart.svg");
+        background-repeat: no-repeat;
+    }
+}

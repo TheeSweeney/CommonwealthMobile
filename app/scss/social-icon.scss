@@ -1,0 +1,18 @@
+@import "./_colors.scss";
+
+.social-icon {
+
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 15px;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $blue-044c7f;
+    }
+
+    &:hover svg {
+        fill: $blue-006aa9;
+    }
+}

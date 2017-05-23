@@ -1,0 +1,117 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+
+.js-viz-spread-expanded {
+
+    pointer-events: none;
+    background-color: #fff;
+    opacity: 0;
+    z-index: 5;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    border: 1px solid $grey-c3c6c9;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-sizing: border-box;
+
+    .close {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        padding: 10px 10px 3px 3px;
+        cursor: pointer;
+        box-sizing: content-box;
+        fill: $grey-c3c6c9;
+
+        &:hover {
+            fill: $blue-1a4e79;
+        }
+    }
+
+
+    .better-worse {
+        font-size: 12px;
+        font-weight: bold;
+        fill: $grey-7f7f7f;
+    }
+
+    .title {
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 16px;
+    }
+
+    marker path {
+        fill: $grey-c3c6c9;
+    }
+
+    rect.bar {
+        fill: $grey-c3c6c9;
+
+        &.highlight {
+            fill: $blue-006aa9;
+        }
+    }
+
+    .difference {
+        path {
+            stroke: $orange-ff7300;
+            stroke-width: 2px;
+            shape-rendering: crispEdges;
+            stroke-dasharray: 5,5;
+        }
+        line {
+            stroke: $orange-ff7300;
+            stroke-width: 2px;
+        }
+        text {
+            fill: $grey-525455;
+            text-anchor: end;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: $interface;
+        }
+    }
+
+    .axis {
+        shape-rendering: crispEdges;
+
+        &.x {
+            line, path {
+                stroke: transparent;
+                fill: none;
+                opacity: 0;
+            }
+        }
+
+        &.y {
+            line {
+                opacity: 0;
+            }
+            path {
+                opacity: 0;
+            }
+            text {
+                font-size: 12px;
+            }
+        }
+
+        &.arrows {
+            path {
+                stroke-width: 2px;
+                stroke: $grey-c3c6c9;
+                fill: none;
+            }
+        }
+
+        text {
+            font-size: 14px;
+            fill: $blue-20262c;
+            font-weight: bold;
+        }
+    }
+
+}

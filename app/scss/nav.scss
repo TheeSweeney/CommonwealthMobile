@@ -1,0 +1,71 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+
+.nav-holder {
+    margin: 0 0 10px 0;
+}
+
+
+nav {
+    background-color: #fff;
+    z-index: 30;
+    border-bottom: 1px solid $grey-c3c6c9;
+
+    .container {
+        display: flex;
+        padding: 10px 0 0;
+
+        @media (max-width: $small-breakpoint) {
+            display: block;
+        }
+
+    }
+}
+
+
+a.nav-item,
+a.nav-item:link,
+a.nav-item:visited,
+a.nav-item:active {
+    display: flex;
+    align-items: center;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 20%;
+    padding: 6px;
+    line-height: 20px;
+    color: $grey-808285;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+        border-color: $grey-808285;
+    }
+
+    &.is-current {
+        color: $blue-006aa9;
+        border-color: $blue-006aa9;
+    }
+
+    @media (max-width: $small-breakpoint) {
+        display: block;
+        width: auto;
+        padding: 12px;
+    }
+}
+
+.nav-item__number {
+    padding-right: 10px;
+    font-size: 44px;
+}
+
+.nav-item__text {
+    font-size: 15px;
+    display: inline-block;
+    max-width: 80%;
+}

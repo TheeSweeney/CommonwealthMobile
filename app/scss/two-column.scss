@@ -1,0 +1,81 @@
+@import "./_breakpoints.scss";
+
+$large: 60%;
+$small: 40%;
+
+// HACK we need these to be applied on the media query
+// and when the body has .is-stacked
+@mixin stackedColumns() {
+    max-width: none;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: auto;
+}
+
+@mixin stackedViz() {
+    order: -1;
+}
+
+@mixin stackedContainer(){
+    flex-direction: column;
+}
+
+
+.two-column {
+    display: flex;
+    padding-bottom: 20px;
+
+    p {
+        margin-top: 0;
+    }
+
+    .is-stacked & {
+        @include stackedContainer();
+    }
+
+    @media (max-width: $medium-breakpoint) {
+        @include stackedContainer();
+    }
+}
+
+.two-column__large {
+    flex-basis: $large;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: $large;
+    box-sizing: border-box;
+
+    .is-stacked & {
+        @include stackedColumns();
+    }
+
+    @media (max-width: $medium-breakpoint) {
+        @include stackedColumns();
+    }
+}
+
+.two-column__small {
+    flex-basis: $small;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: $small;
+    box-sizing: border-box;
+
+    .is-stacked & {
+        @include stackedColumns();
+    }
+
+    @media (max-width: $medium-breakpoint) {
+        @include stackedColumns();
+    }
+}
+
+.two-column__viz {
+    .is-stacked & {
+        @include stackedViz();
+    }
+
+    @media (max-width: $medium-breakpoint) {
+        @include stackedViz();
+    }
+}

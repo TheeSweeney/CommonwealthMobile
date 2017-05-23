@@ -1,0 +1,202 @@
+@import "./_colors.scss";
+
+.js-viz-ses-scatter__typeahead {
+    width: 100%;
+
+    .twitter-typeahead{
+        display: block !important;
+        width: 350px;
+        line-height: 35px;
+    }
+
+}
+
+.viz-ses-scatter-holder {
+    overflow: visible;
+    svg {
+        overflow: visible;
+    }
+}
+
+.js-viz-ses-scatter {
+    position: relative;
+
+    // iPad: prevent blinking when the user taps a dot
+    -webkit-tap-highlight-color: transparent;
+
+    circle.dot {
+        fill: $grey-7f7f7f;
+        transition: fill 100ms;
+
+        &.old {
+            fill: #fff;
+            stroke: $blue-006aa9;
+            stroke-width: 1px;
+            opacity: 0;
+
+            &.show {
+                opacity: 1;
+            }
+        }
+    }
+
+    .dot-hovered {
+        circle.dot {
+            fill: $grey-eaeaea;
+
+            &.active {
+                fill: $blue-006aa9;
+            }
+        }
+    }
+
+    text.active-label,
+    text.historic-label {
+        opacity: 0;
+        font-weight: bold;
+        font-size: 14px;
+
+        &.show{
+            opacity: 1;
+        }
+    }
+
+    line.threshold {
+        stroke-width: 2px;
+
+        &.poverty {
+            stroke: $orange-fcb67d;
+        }
+
+        &.performance {
+            stroke: $orange-fcb67d;
+        }
+    }
+
+    text.pov-perf-label {
+        text-anchor: middle;
+        fill: $orange-ff7300;
+        font-size: 12px;
+    }
+
+    pattern path {
+        stroke: $orange-fcb67d;
+        stroke-width: 1px;
+    }
+
+    marker path {
+        fill: $grey-c3c6c9;
+    }
+
+    .axis {
+        shape-rendering: crispEdges;
+
+        line, path {
+            stroke: $grey-eaeaea;
+            stroke-width: 1px;
+            fill: none;
+        }
+
+        &.arrows {
+            path {
+                stroke-width: 2px;
+                stroke: $grey-c3c6c9;
+            }
+        }
+
+        text {
+            font-size: 12px;
+            fill: $grey-7f7f7f;
+            font-weight: bold;
+        }
+    }
+
+    text.median, text.pov {
+        font-size: 12px;
+        fill: $orange-ff7300;
+    }
+
+    .popup {
+
+        .worse {
+            color: $bad-red;
+        }
+
+        .steady {
+            color: $grey-7f7f7f;
+        }
+
+        .improved {
+            color: $good-green;
+        }
+
+        .change {
+            font-size: 18px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .number {
+            font-size: 28px;
+            font-weight: bold;
+            vertical-align: middle;
+
+            sup {
+                font-size: 16px;
+            }
+        }
+
+        .indicator-label {
+            padding: 20px 6px 0;
+            font-size: 16px;
+        }
+
+        .year-label {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .low-income-residents {
+
+            padding-top: 4px;
+
+            // prevent inherited value from coming through
+            line-height: 16px;
+
+            span {
+                font-size: 16px;
+                line-height: 16px;
+                vertical-align: baseline;
+            }
+
+            .number {
+                font-size: 16px;
+                line-height: 20px;
+                sup {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .popup__content {
+            padding: 20px 10px
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+
+            th {
+                font-weight: normal;
+                vertical-align: bottom;
+            }
+
+            td {
+                padding: 0 6px;
+                vertical-align: top;
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,47 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+@import "./_breakpoints.scss";
+
+
+.mobile-warning-holder {
+
+    display: none;
+
+    position: relative;
+    padding-bottom: 30px;
+
+    @media (max-width: $small-breakpoint){
+        display: block;
+    }
+}
+
+.mobile-warning {
+
+
+    padding: 30px;
+    text-align: center;
+
+    font-family: $interface;
+    line-height: 1.5em;
+    color: $blue-20262c;
+
+    background-color: white;
+    box-shadow: 0px 3px 25px #ccc;
+
+    .svg-alert {
+        display: block;
+        margin: 0 auto 10px;
+    }
+
+
+}
+
+.mobile-warning__alert {
+    font-family: $interface;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.25em;
+    color: $green-0c5554;
+    fill: $green-0c5554;
+    padding-bottom: 20px;
+}

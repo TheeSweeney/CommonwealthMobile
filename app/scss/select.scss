@@ -1,0 +1,22 @@
+@import "./_colors.scss";
+
+
+select {
+    display: inline-block;
+    padding: 10px 35px 10px 15px;
+    box-sizing: border-box;
+
+    color: $blue-006aa9;
+    font-size: 16px;
+    line-height: 24px;
+
+    appearance: none;
+    background: transparent;
+    background-color: #eee;
+    background-image: url("../../img/down-arrow.png");
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}

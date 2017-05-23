@@ -1,0 +1,66 @@
+
+// **NOTE** this should match the VIZ_WIDTH in initStickyViz.js
+$vizWidth: 60%;
+
+.sticky {
+
+    .viz-section {
+
+        position: relative;
+        padding: 0 $vizWidth 0 0; // right padding
+        margin-bottom: 60px;
+
+        .viz-section__viz-holder, .viz-section__not-sticky {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: (100% - $vizWidth);
+            width: auto;  // important! don't set width!  use left/right instead
+            padding-left: 50px;
+            padding-right: 0;
+            // 18px so IE can have it's precious space for the scrollbar
+            box-sizing: border-box;
+            overflow-y: auto;
+            // needed for IE to not show the horizontal scrollbar
+            overflow-x: hidden;
+        }
+
+        &.viz-section--viz-left {
+            padding: 0 0 0 $vizWidth; // left padding
+
+            .viz-section__viz-holder, .viz-section__not-sticky {
+                position: absolute;
+                top: 0;
+                right: (100% - $vizWidth);
+                left: 0;
+                padding-left: 0;
+                padding-right: 50px;
+            }
+        }
+
+
+    }
+
+    // do i need these? moved paddings above to .viz-section__viz-holder
+    // .viz-holder--padding-left {
+    //     padding-left: 50px;
+    // }
+    //
+    // .viz-holder--padding-right {
+    //     padding-right: 50px;
+    // }
+
+}
+
+
+
+.viz-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-color: #cce;
+    box-sizing: border-box;
+}

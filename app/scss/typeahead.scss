@@ -1,0 +1,88 @@
+@import "./_colors.scss";
+
+$radius: 5px;
+$height: 38px;
+
+.twitter-typeahead {
+   position: relative;
+   height: $height;
+
+   &::after {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: url("../../img/search.svg");
+    right: 8px;
+    top: 8px;
+  }
+}
+
+
+.typeahead {
+    width: 100%;
+    display: block;
+    height: $height;
+    padding: 0px 36px 0 12px; // room for icon
+    font-size: 14px;
+    font-weight: bold;
+    line-height: $height;
+    border: 1px solid #b9c1c7;
+    border-radius: $radius;
+    background-color: #ebeced;
+    outline: none;
+    color: $blue-20262c;
+
+    box-sizing: border-box;
+
+    &::placeholder {
+      font-weight: normal;
+      color: #bbbdbf;
+    }
+
+    &.tt-open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-color: $blue-006aa9;
+    }
+}
+
+.tt-hint {
+  color: $grey-525455;
+  background-color: #f0f3f5 !important; // overwrite javascript styles
+}
+
+.tt-menu {    /* used to be tt-dropdown-menu in older versions */
+  position: relative;
+  width: 100%;
+  margin-top: -1px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid $blue-006aa9;
+  max-height: 350px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+
+
+.tt-suggestion {
+  padding: 6px 18px;
+  line-height: 24px;
+  text-align: start;
+  font-size: 14px;
+  font-weight: bold;
+  color: $blue-20262c;
+  border-color: $blue-006aa9;
+}
+
+.tt-suggestion.tt-cursor,.tt-suggestion:hover {
+  color: $blue-006aa9;
+  cursor: pointer;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}

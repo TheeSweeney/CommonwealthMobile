@@ -1,0 +1,137 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+
+$overflowOffset: 150px;
+$padding: 10px;
+$child-padding:  $padding*3 $padding;
+
+footer {
+    color: white;
+    background-color: $green-085453;
+    margin-top: $overflowOffset + 100px;
+
+    h2 {
+        color: white;
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        line-height: 38px;
+        text-transform: uppercase;
+    }
+
+    .container {
+        position: relative;
+        top: -$overflowOffset;
+        padding: 0;
+    }
+}
+
+.footer__bottom {
+    .container {
+        display: flex;
+        background-color: $green-085453;
+        // border: 1px solid $blue-339cda;
+        border-top: 0;
+        padding: $padding $padding*2;
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: $green-93bbba;
+        }
+
+        .footer__contact,
+        .footer__share,
+        .footer__additional-resources {
+            // flex-basis: 30%;
+            flex-grow: 0;
+            flex-shrink: 1;
+            box-sizing: border-box;
+        }
+
+        .footer__additional-resources {
+            flex-basis: 40%;
+
+            button {
+                width: 320px;
+                max-width: 100%;
+            }
+        }
+
+        .footer__contact {
+            flex-basis: 30%;
+        }
+
+        .footer__share {
+            flex-basis: 30%;
+        }
+    }
+}
+
+.footer__additional-resources {
+    padding: $child-padding;
+
+    .button-holder + .button-holder{
+        margin-top: 20px;
+    }
+}
+
+.footer__contact {
+    padding: $child-padding;
+}
+
+
+
+.footer__share {
+    padding: $child-padding;
+
+    .social-share {
+        font-size: 16px;
+        text-align: center;
+
+        @media (max-width: $small-breakpoint){
+            text-align: left;
+        }
+
+        .social-share__label {
+            display: block;
+            padding-bottom: 20px;
+            color: white;
+        }
+
+        .social-icon {
+
+            &:hover svg {
+                fill: $green-93bbba;
+            }
+
+            padding: 6px 0;
+
+            + .social-icon {
+                padding-left: 15px;
+            }
+
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: white;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $small-breakpoint){
+    .footer__bottom {
+        display: block;
+    }
+}

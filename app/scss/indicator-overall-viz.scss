@@ -1,0 +1,124 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+
+.js-viz-indicator-overall {
+
+    position: relative;
+    // enough padding so the popup triangle has room.
+    padding: 10px;
+
+
+    .dimension + .dimension {
+        padding-top: 30px;
+    }
+
+    .dimension-label {
+        font-family: $interface;
+        font-weight: normal;
+        letter-spacing: 0.03em;
+        padding: 5px 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $grey-d3d5d7;
+        cursor: pointer;
+
+        &:hover {
+            color: $blue-006aa9;
+        }
+
+        &::after {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-left: 5px;
+            background-image: url("../../img/caret.svg");
+            content: "";
+            transform: rotate(180deg);
+            transition: transform 250ms;
+        }
+    }
+
+    .is-expanded .dimension-label::after {
+        transform: rotate(0deg);
+    }
+
+    h5 {
+        font-size: 14px;
+        font-weight: bold;
+        font-family: $interface;
+        margin: 0;
+    }
+
+    .indicator {
+        margin-bottom: 14px;
+    }
+
+    svg {
+
+        //  make sure there is not whitespace in the parent div
+        display: block;
+
+        rect.status {
+
+            //stroke-linecap: round;
+            //shape-rendering: crispEdges;
+
+            &.worse {
+                fill: $bad-red;
+            }
+
+            &.steady {
+                fill: $neutral-gray;
+            }
+
+            &.improved {
+                fill: $good-green;
+            }
+
+            &.active {
+                stroke: $grey-454545;
+                stroke-width: 2px;
+            }
+        }
+
+        rect.hover-target {
+            opacity: 0;
+        }
+    }
+
+    .popup {
+        max-width: 380px;
+        z-index: 20;
+    }
+
+    // popup content
+    .indicator-overall__popup {
+
+        span {
+
+            strong {
+                font-size: 30px;
+                font-weight: bold;
+                vertical-align: sub;
+            }
+
+            &.worse {
+                color: $bad-red;
+            }
+
+            &.steady {
+                color: $grey-7f7f7f;
+            }
+
+            &.improved {
+                color: $good-green;
+            }
+        }
+    }
+
+    .indicator-overall__popup-note {
+        color: $grey-7f7f7f;
+        padding-top: 20px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}

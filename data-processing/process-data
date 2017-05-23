@@ -1,0 +1,18 @@
+#!/bin/sh
+
+mkdir -p out
+mkdir -p temp
+echo "Filter Data Sheets > JSON"
+in2csv --sheet "ST2016" $1 | csvcut --columns IndicatorOrder,Dimension,mxID,mxDetail,Short_Description,Direction,DATAYEAR,sTIME | csvjson > ./temp/indicators-data.json
+in2csv --sheet "ST2016" $1 | csvcut --columns mxID,geoid,sTIME,PointEstimate,RANK,QUARTILE,threshold_v1,threshold_v2,DELTA,improved,worse,improved_5std,worse_5std,improved_1std,worse_1std | csvjson > ./temp/data.json
+echo "Locations > JSON"
+in2csv --sheet "Locations" $2 | csvjson > ./temp/locations.json
+echo "Indicators > JSON"
+in2csv --sheet "INDICATORS" $3 | csvjson > ./temp/indicators.json
+echo "Process Indicators"
+node combine-indicators.js ./temp/indicators-data.json ./temp/indicators.json ./out/indicators.json
+echo "Process Locations"
+node combine-locations.js ./temp/locations.json ./out/locations.json
+echo "Combine Data"
+node combine-data.js ./temp/data.json ./out/data.json
+rm -rf ./temp

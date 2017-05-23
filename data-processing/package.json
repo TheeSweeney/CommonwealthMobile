@@ -1,0 +1,17 @@
+{
+  "name": "cmwf",
+  "version": "1.0.0",
+  "description": "Instructions to process source Excel file",
+  "main": "combine.js",
+  "dependencies": {
+    "ramda": "^0.21.0"
+  },
+  "devDependencies": {
+    "ramda": "^0.21.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

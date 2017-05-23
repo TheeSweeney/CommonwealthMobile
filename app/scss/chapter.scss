@@ -1,0 +1,23 @@
+@import "./_colors.scss";
+@import "./_vars.scss";
+
+.chapter {
+    max-width: $containerWidth;
+    margin: auto;
+    // 1px padding makes sure that the <h2> margin is inside the chapter
+    padding: 1px 10px;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.chapter__divider {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: $grey-c3c6c9;
+    margin-top: 200px;
+}
+
+
+#chapter5 {
+    // max-width: 870px;
+}

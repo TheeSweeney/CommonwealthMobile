@@ -1,0 +1,47 @@
+@import "./_fonts.scss";
+@import "./_colors.scss";
+
+a.button,
+a.button:link,
+a.button:visited,
+a.button:hover,
+a.button:active,
+button {
+    display: inline-block;
+    padding: 10px 16px;
+    box-sizing: border-box;
+
+    color: white;
+    font-family: $interface;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    background-color: $blue-006aa9;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none !important;
+
+    &:hover {
+        background-color: $blue-1a4e79;
+    }
+
+    &:focus {
+        border: 2px solid $blue-339cda;
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &.button--white {
+        background-color: white;
+        color: $blue-006aa9 !important;
+
+        &:hover {
+            background-color: $blue-daeaf2;
+        }
+
+    }
+}

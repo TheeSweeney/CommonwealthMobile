@@ -1,0 +1,36 @@
+@import "./_colors.scss";
+
+$padding: 5px;
+
+.info-text {
+    display: inline;
+    margin-left: $padding;
+    margin-right: $padding;
+    padding-left: 0;
+    padding-right: 0;
+    color: $blue-006aa9;
+    background-color: $blue-e8f5fc;
+
+
+    // add padding on new lines to the left and right
+    box-shadow: (-1 * $padding) 0px 0px 0px $blue-e8f5fc,
+                $padding 0px 0px 0px $blue-e8f5fc;
+
+    cursor: pointer;
+
+    // these elements have popups that need to calculate the center
+    &.js-footnote__trigger {
+        white-space: nowrap;
+    }
+
+    &::before {
+        display: inline-block;
+        vertical-align: baseline;
+        width: 14px;
+        height: 14px;
+        margin: 0 4px 0 2px;
+        content: "";
+        transform: translateY(1px);
+        background-image: url("../../img/info.svg");
+    }
+}

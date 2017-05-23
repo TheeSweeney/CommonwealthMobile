@@ -1,0 +1,23 @@
+@import "./_vars.scss";
+
+body {
+    padding: 0;
+    margin: 0;
+
+    // a trick from angular, hide all the content until
+    // javascript is done laying things out
+    &.cloak {
+        visibility: hidden;
+    }
+}
+
+.container {
+    max-width: $containerWidth;
+    padding: 10px;
+    margin: auto;
+}
+
+
+img {
+    max-width: 100%;
+}

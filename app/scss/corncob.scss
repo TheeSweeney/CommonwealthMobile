@@ -1,0 +1,125 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+
+.corncob__popup {
+
+    font-size: 16px;
+    line-height: 22px;
+
+    .number {
+        font-family: $interface;
+        font-size: 30px;
+        font-weight: bold;
+        vertical-align: sub;
+    }
+
+    sup {
+        font-size: 16px;
+    }
+
+    .swatch {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        border-radius: 4px;
+        vertical-align: middle;
+    }
+
+    .kernel__quintile,
+    .kernel__rank {
+        padding-bottom: 10px;
+    }
+
+    .kernel__rank {
+        display: flex;
+
+
+
+        // so it lines up with the swatch
+        padding-left: 35px;
+
+        .number {
+            padding-right: 6px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: auto;
+        }
+
+        .label {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+        }
+
+    }
+}
+
+.corncob__title.viz-label {
+    margin-bottom: 10px;
+}
+
+.corncob__label .rank {
+    font-weight: bold;
+    fill: $blue-006aa9;
+}
+
+.js-viz-corncob {
+    button {
+        margin: 0 4px;
+    }
+}
+
+.corncob__header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.corncob__header-column {
+    $triangle-width: 12px;
+    $triangle-spacing: 4px;
+
+    position: relative;
+
+    text-align: left;
+    padding: 0 2px 0 #{$triangle-width + $triangle-spacing + $triangle-spacing/2};
+    cursor: pointer;
+
+
+    &.is-asc,
+    &.is-desc {
+        color: $blue-006aa9;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: $triangle-spacing/2;
+        height: 0;
+        width: 0;
+        content: "";
+    }
+
+    // up arrow
+    &::before {
+        top: calc(50% - #{$triangle-width/2} - #{$triangle-spacing/2});
+        border-width: 0 $triangle-width/2 $triangle-width/2 $triangle-width/2;
+        border-style: solid;
+        border-color: $grey-c3c6c9 transparent;
+    }
+    &.is-asc::before {
+        border-color: $blue-006aa9 transparent;
+    }
+
+    // down arrow
+    &::after {
+        bottom: calc(50% - #{$triangle-width/2} - #{$triangle-spacing/2});
+        border-width: $triangle-width/2 $triangle-width/2 0 $triangle-width/2;
+        border-style: solid;
+        border-color: $grey-c3c6c9 transparent;
+    }
+    &.is-desc::after {
+        border-color: $blue-006aa9 transparent;
+    }
+
+}

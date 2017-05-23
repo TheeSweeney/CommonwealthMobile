@@ -1,0 +1,81 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+
+
+body {
+    font-family: $interface;
+    font-size: 16px;
+    line-height: 27px;
+    color: $blue-20262c;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: $blue-339cda;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $blue-006aa9;
+    // text-decoration: underline;
+}
+
+p {
+    margin-top: 0;
+}
+
+h2 {
+    font-family: $interface;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: $green-0c5554;
+}
+
+h3 {
+    margin: 25px 0 10px 0;
+    font-size: 26px;
+    line-height: 30px;
+    font-family: $interface;
+    color: $green-0c5554;
+}
+
+h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: $interface;
+    font-weight: bold;
+    border-bottom: 1px solid $grey-d3d5d7;
+    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+}
+
+.location-label {
+    font-family: $interface;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+
+.indicator-label {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.viz-label {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3b3b3b;
+}
+
+.dimension-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}

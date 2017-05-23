@@ -1,0 +1,18 @@
+@import "./_colors.scss";
+
+.js-viz-intro-map {
+    svg {
+        path {
+            fill: none;
+            stroke: $purple-e803b1;
+            stroke-width: 1px;
+        }
+
+        circle.hrr-dot {
+            fill: $purple-e803b1;
+            stroke: $purple-e803b1;
+            stroke-opacity: .5;
+            stroke-width: 7px;
+        }
+    }
+}

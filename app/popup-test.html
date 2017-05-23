@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Commonwealth Local Scorecard </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="build/css/index-generated.css">
+
+        <style>
+
+            .popup {
+                /*width: 240px;*/
+            }
+
+            .test-area {
+                position: relative;
+                background-color: #ddd;
+                width: 98%;
+                height: 400px;
+                margin: 20px auto;
+            }
+
+            .right-left {
+                display: flex;
+            }
+            .right-left .test-area {
+                flex: 0 0 48%;
+                height: 800px;
+            }
+
+            .dot {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background-color: #009;
+                border-radius: 50%;
+                content: "";
+                transform: translate(-50%, -50%);
+            }
+
+            .js-popup-canvas {
+                position: relative;
+                width: 98%;
+                height: 700px;
+                margin: 20px auto;
+                background-color: #ddd;
+            }
+            .triangle-form {
+                margin: 2%;
+            }
+            .triangle-form label {
+                margin-right: 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="triangle-form">
+            <label>Triangle: </label>
+            <label>
+                <input type="radio" name="triangle" value="top" checked></input>
+                 Top
+             </label>
+            <label>
+                <input type="radio" name="triangle" value="right"></input>
+                Right
+            </label>
+            <label>
+                <input type="radio" name="triangle" value="bottom"></input>
+                Bottom
+            </label>
+            <label>
+                <input type="radio" name="triangle" value="left"></input>
+                Left
+            </label>
+        </div>
+
+        <div class="js-popup-canvas">
+
+        </div>
+
+        <div class="right-left">
+            <div class="right-test test-area"></div>
+            <div class="left-test test-area"></div>
+
+        </div>
+        <div class="top-test test-area"></div>
+        <div class="bottom-test test-area"></div>
+
+
+        <script type="text/javascript" src="build/js/polyfill-generated.js"></script>
+        <script type="text/javascript" src="build/js/common-generated.js"></script>
+        <script type="text/javascript" src="build/js/popup-test-generated.js"></script>
+
+
+    </body>
+</html>

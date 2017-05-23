@@ -1,0 +1,35 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+
+header {
+    padding: 15px;
+    color: $blue-061e31;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        .logo {
+            margin-right: auto;
+            
+            img {
+                border: none;
+            }
+
+            .back-to {
+                display: block;
+                padding-top: 15px;
+                font-family: $interface;
+                font-size: 13px;
+                line-height: 13px;
+                font-weight: bold;
+                text-align: left;
+            }
+
+        }
+    }
+}

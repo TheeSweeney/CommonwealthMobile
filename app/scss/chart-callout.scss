@@ -1,0 +1,75 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+
+$borderRadius: 4px;
+
+
+.chart-callout {
+    border: 1px solid $grey-b9c1c7;
+    box-sizing: border-box;
+    border-radius: $borderRadius;
+    padding: 25px 20px;
+    position: relative;
+    background-color: #fff;
+    cursor: pointer;
+
+    label {
+        font-size: 16px;
+        line-height: 20px;
+        color: $blue-006aa9;
+        display: block;
+    }
+
+    &.small {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        
+        img {
+            width: 50%;
+            height: 100%;
+        }
+
+        label {
+            margin: 0 0 0 15px;
+            width: 50%;
+        }
+    }
+
+    &.large {
+
+        img {
+            margin: 20px 40px;
+            width: calc(100% - 80px);
+        }
+    
+    }
+
+    &::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+
+        background-color: rgba($grey-414345,0.86);
+        background-image: url("../../img/svg-sprite/magnifying-glass.svg");
+        background-size: 37px 37px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-radius: $borderRadius;
+
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 250ms;
+
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+}

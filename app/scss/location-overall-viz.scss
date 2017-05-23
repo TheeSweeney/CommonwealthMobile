@@ -1,0 +1,218 @@
+@import "./_colors.scss";
+
+.js-viz-location-overall__typeahead {
+    width: 100%;
+
+    .twitter-typeahead{
+        display: block !important;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+}
+
+.js-viz-location-overall {
+    position: relative;
+
+    // iPad: prevent blinking when the user taps the chart
+    -webkit-tap-highlight-color: transparent;
+
+    // .legend {
+    //     rect.border {
+    //         fill: none;
+    //         stroke: $grey-c3c6c9;
+    //         stroke-width: 1px;
+    //         shape-rendering: crispEdges;
+    //     }
+    //
+    //     text {
+    //         text-anchor: middle;
+    //         font-size: 13px;
+    //         fill: $grey-454545;
+    //         font-weight: bold;
+    //
+    //         &.bar-label {
+    //             font-weight: normal;
+    //         }
+    //     }
+    //
+    //     line.legend-bar {
+    //         stroke-width: 3px;
+    //         shape-rendering: crispEdges;
+    //
+    //         &.worse {
+    //             stroke: $bad-red;
+    //         }
+    //
+    //         &.steady {
+    //             stroke: $neutral-gray;
+    //         }
+    //
+    //         &.improved {
+    //             stroke: $good-green;
+    //         }
+    //     }
+    //
+    // }
+
+    .y-label {
+        line{
+            stroke: $grey-808285;
+            stroke-width: 2px;
+            shape-rendering: crispEdges;
+
+
+        }
+        text {
+            text-anchor: middle;
+            font-size: 12px;
+            fill: #7f7f7f;
+            font-weight: bold;
+        }
+
+        rect.background {
+            fill: #fff;
+        }
+    }
+
+    marker path {
+        fill: $grey-808285;
+    }
+
+    path.continuity-line {
+        fill: none;
+        stroke: $grey-808285;
+        stroke-width: 1px;
+    }
+
+    .location-dot {
+        fill: $medicaid-yellow;
+    }
+
+    rect.status {
+
+        //stroke-linecap: round;
+        shape-rendering: geometricPrecision;
+
+        &.steady {
+            fill: $neutral-gray;
+        }
+
+        &.improved-full {
+            fill: $good-green;
+        }
+
+        &.improved-half {
+            fill: $good-green-dim;
+        }
+
+        &.worse-full {
+            fill: $bad-red;
+        }
+
+        &.worse-half {
+            fill: $bad-red-dim;
+        }
+
+    }
+
+    rect.indicator-dot {
+
+        &.steady {
+            fill: $neutral-gray;
+        }
+
+        &.improved-full {
+            fill: $good-green;
+        }
+
+        &.improved-half {
+            fill: $good-green-dim;
+        }
+
+        &.worse-full {
+            fill: $bad-red;
+        }
+
+        &.worse-half {
+            fill: $bad-red-dim;
+        }
+
+        &.na {
+            stroke: $grey-c3c6c9;
+            stroke-width: 1px;
+        }
+    }
+
+    pattern path {
+        stroke: $grey-7f7f7f;
+        stroke-width: 1px;
+    }
+
+    .active-location {
+        text.label {
+            text-anchor: middle;
+            text-transform: uppercase;
+        }
+    }
+
+    path.close {
+        cursor: pointer;
+        fill: $grey-c3c6c9;
+
+        &:hover {
+            fill: $blue-1a4e79;
+        }
+    }
+
+    .hover-zone {
+        opacity: 0;
+    }
+
+    .popup__title {
+        text-transform: none;
+        white-space: normal;
+        font-weight: bold;
+    }
+
+    .location-overall__popup {
+
+        sup {
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+
+            span {
+                white-space: nowrap;
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            strong {
+                font-size: 32px;
+                font-weight: bold;
+                vertical-align: sub;
+                margin-left: 3px;
+
+                &.worse {
+                    color: $bad-red;
+                }
+
+                &.steady {
+                    color: $grey-7f7f7f;
+                }
+
+                &.improved {
+                    color: $good-green;
+                }
+            }
+        }
+
+    }
+}

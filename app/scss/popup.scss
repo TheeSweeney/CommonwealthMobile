@@ -1,0 +1,199 @@
+@import "./_colors.scss";
+
+$background-color: #fff;
+
+$triangle-size: 10px;
+$border-width: 1;
+$border-color: $grey-c3c6c9;
+
+$title-background-color: $grey-ededed;
+
+$content-width: 240px;
+$popup-padding: 20px;
+$x-icon-size: 14px;
+$name-line-height: 30px;
+$transition-duration: 250ms;
+
+// "top", "bottom", "left", "right"
+@mixin triangle($where, $has-title: false){
+
+    $top   : $where == "top";
+    $right : $where == "right";
+    $bottom: $where == "bottom";
+    $left  : $where == "left";
+
+
+    // http://www.cssarrowplease.com/
+    &:after,
+    &:before {
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        border: solid transparent;
+        content: " ";
+        box-sizing: content-box;
+
+        // move the triangle to the outside of the box
+        top    : if($bottom, 100%, auto);
+        bottom : if($top,    100%, auto);
+
+        right  : if($left,  100%, auto);
+        left   : if($right, 100%, auto);
+    }
+
+    // triangle
+    &:after {
+        border-color: transparent;
+        border-width: $triangle-size;
+
+        margin-top: if($right or $left, -$triangle-size, auto);
+        margin-left: if($top or $bottom, -$triangle-size, auto);
+
+        // depending on which side it's on, color the triangle
+        // the top triange is grey if it has a title, otherwise, white like all the others
+        border-bottom-color: if($top, if($has-title, $title-background-color, $background-color), transparent);
+        border-top-color: if($bottom, $background-color, transparent);
+        border-left-color: if($right, $background-color, transparent);
+        border-right-color: if($left, $background-color, transparent);
+
+    }
+
+    // triangle border
+    &:before {
+        border-color: transparent;
+        border-width: $triangle-size + $border-width*2;
+
+        margin-top: if($right or $left, -$triangle-size - $border-width*2, auto);
+        margin-left: if($top or $bottom, -$triangle-size - $border-width*2, auto);
+
+        border-bottom-color: if($top, $border-color, transparent);
+        border-top-color: if($bottom, $border-color, transparent);
+        border-left-color: if($right, $border-color, transparent);
+        border-right-color: if($left, $border-color, transparent);
+
+    }
+}
+
+.popup {
+    position: absolute;
+
+    // having a variable size can cause bugs when the popup butts up agains the side of the
+    // parent container. The triangle might not point at the correct spot...
+    min-width: $content-width;
+    max-width: $content-width*1.5;
+
+
+    background-color: $background-color;
+    border-radius: 2px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 15;
+
+    transform: scale(1);
+    box-sizing: content-box;
+
+    border: #{$border-width}px solid $border-color;
+
+    // http://www.greywyvern.com/?post=337
+    // excludeing top and left, to be handled by javascript so we can place it before fading in
+    transition: transform $transition-duration, opacity $transition-duration,
+                visibility $transition-duration; // so we can transition, and also have the element ignore click/hover events while it's hidden
+    // transition: all $transition-duration;
+
+    &.is-triangle-top {
+        box-shadow: 0 -2px 30px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &.is-triangle-right {
+        box-shadow: 2px 0px 30px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &.is-triangle-bottom {
+        box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    &.is-triangle-left {
+        box-shadow: -2px 0px 30px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// .popup--hidden {
+//     opacity: 0;
+//     visibility: hidden;
+//     // when it's hidden, it's slightly lower, so when it appears, it trasitions up
+//     transform: scale(0.9);
+// }
+
+.popup__title {
+    padding: 15px 23px;
+    padding-right: $x-icon-size + 15px; // room for the x-icon
+    background-color: $title-background-color;
+    border-bottom: #{$border-width}px solid $border-color;
+
+    &:empty {
+        padding: 0;
+        border: 0;
+    }
+}
+
+.popup__content {
+    padding: $popup-padding $popup-padding*1.5 $popup-padding $popup-padding;
+    font-size: 14px;
+}
+
+.popup__x-icon {
+    position: absolute;
+    top: 2px; // move it down so it aligns with the state name
+    right: 0;
+    padding: $popup-padding/2 $popup-padding/2 3px 3px; // large hit area
+    cursor: pointer;
+    box-sizing: content-box;
+
+    fill: $grey-c3c6c9;
+
+    &:hover {
+        fill: $blue-1a4e79;
+    }
+}
+
+// triangle
+.popup__triangle {
+
+    position: absolute;
+    content: "";
+
+    height: $triangle-size;
+
+    transition: all $transition-duration;
+
+    .is-triangle-top & {
+        top: 0;
+        left: 50%;
+        // left: 50% with offset from javascript
+        @include triangle("top", true);
+    }
+
+    .is-triangle-top.no-title & {
+        @include triangle("top", false);
+    }
+
+    .is-triangle-right & {
+        top: 50%;
+        right: 0;
+        @include triangle("right");
+    }
+
+    .is-triangle-bottom & {
+        bottom: 0;
+        left: 50%;
+        @include triangle("bottom");
+    }
+
+
+    .is-triangle-left & {
+        top: 50%;
+        left: 0;
+        @include triangle("left");
+    }
+}

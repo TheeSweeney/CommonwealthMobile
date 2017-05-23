@@ -1,0 +1,25 @@
+@import "./_colors.scss";
+
+.footnote {
+    a.footnote__trigger,
+    a:link.footnote__trigger,
+    a:visited.footnote__trigger,
+    a:hover.footnote__trigger,
+    a:active.footnote__trigger {
+
+    }
+}
+
+
+
+
+// https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
+}

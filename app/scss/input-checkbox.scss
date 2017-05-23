@@ -1,0 +1,139 @@
+@import "./_colors.scss";
+
+/**
+ *  Example Markup:
+ *
+ * <label class="input-checkbox">
+ *     <input type="checkbox" /> <span /> Checkbox label
+ * </label>
+ */
+
+$width: 8px;
+$height: 4px;
+
+@keyframes check {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    50% {
+        width: 0;
+        height: $height;
+    }
+    100% {
+        width: $width;
+        height: $height;
+    }
+}
+
+@keyframes uncheck {
+    0% {
+        width: $width;
+        height: $height;
+    }
+    50% {
+        width: 0;
+        height: $height;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+.input-checkbox {
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    color: $blue-1a4e79;
+    font-size: 18px;
+
+
+    input[type="checkbox"] + span {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .label {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+}
+
+label.input-checkbox input[type="checkbox"] {
+
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+    bottom: 0px;
+
+
+    &:active, &:focus + span  {
+      border-color: $blue-339cda;
+    }
+
+    &:disabled {
+        + span {
+            border-color: $grey-d3d5d7;
+            &:after {
+                border-color: $grey-c3c6c9;
+            }
+        }
+        // grey out the text label
+        ~ .label {
+            color: $grey-d3d5d7;
+        }
+    }
+
+    // fake checkbox
+    + span {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 8px 0 0;
+        background-color: $grey-ededed;
+        border: 2px solid $grey-d3d5d7;
+        border-radius: 3px;
+        box-sizing: content-box;
+
+        // checkmark
+        &:after {
+            position: absolute;
+            top: 8px;
+            left: 2px;
+            display: block;
+            width: $width;
+            height: $height;
+            border-bottom: 3px solid $blue-006aa9;
+            border-left: 3px solid $blue-006aa9;
+            content: "";
+            opacity: 0;
+            transform: rotate(-45deg);
+            transform-origin: left top;
+            transition: all 100ms;
+        }
+    }
+
+    &:not(:checked) + span:after {
+        // animation: uncheck 250ms;
+    }
+    // &:not(:checked), // for testing
+    &:checked {
+        + span {
+            &:after {
+                opacity: 1;
+                // animation: check 100ms;  // TODO this is wonky inside select dropdowns
+            }
+        }
+    }
+
+}

@@ -1,0 +1,19 @@
+@import "./_colors.scss";
+@import "./_breakpoints.scss";
+
+.social-share {
+    color: $blue-044c7f;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 50px; // for when it wraps
+}
+
+.social-share__label {
+    display: inline-block;
+
+    @media (max-width: $small-breakpoint){
+        display: block;
+        line-height: 1em;
+    }
+}

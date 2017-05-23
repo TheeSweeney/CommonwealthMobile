@@ -1,0 +1,15 @@
+.location-header {
+    display: flex;
+    align-items: center;
+
+    padding-left: 23px;
+
+    > div {
+        flex-basis: 50%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        max-width: 50%;
+        padding: 0 3px;
+        box-sizing: border-box;
+    }
+}

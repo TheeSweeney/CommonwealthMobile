@@ -1,0 +1,159 @@
+@import "./_colors.scss";
+@import "./_fonts.scss";
+@import "./_breakpoints.scss";
+
+$padding: 20px;
+$border-radius: 6px;
+
+.callout-box {
+    position: relative;
+    margin: 30px 0;
+    border: 1px solid $grey-c3c6c9;
+    border-radius: $border-radius;
+}
+
+.callout-box__label-wrapper {
+    // padding-bottom: $padding; single line text doesn't need padding
+}
+
+.callout-box__label {
+
+    display: inline-flex;
+    align-items: flex-start;
+
+    position: relative;
+    margin-top: -9px;
+    left: 20px;
+    max-width: calc(100% - 60px);
+    padding: 0 10px 0 10px;
+    color: $grey-3b3b3b;
+    font-family: $interface;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 18px;
+    text-transform: uppercase;
+    background-color: white;
+
+    // http://stackoverflow.com/questions/3003051/why-does-the-html5-doctype-mess-with-my-padding
+    vertical-align: top;
+
+    svg {
+        padding-right: 0.5em;
+    }
+}
+
+.callout-box__title {
+    color: $grey-3b3b3b;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 $padding $padding;
+}
+
+.callout-box__body {
+    display: none; // javascript will open this
+    padding: 0 $padding $padding;
+
+    .fade & {
+        display: block;
+        overflow: hidden;
+        position: relative;
+
+        ::after {
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 75%;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(255,255,255,0.15));
+        }
+        
+    }
+
+    .fade .is-expanded & {
+        height: inherit;
+
+        ::after {
+            content: none;
+        }
+    }
+
+    p {
+        margin-top: 0;
+
+        // removes a large space at the end of the callout box
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.callout-box__toggle {
+    padding: 4px 0;
+
+    color: $blue-006aa9;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+
+    background-color: $green-f0f3f5;
+    border-top: 1px solid $grey-c3c6c9;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    cursor: pointer;
+
+    &::after {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-left: 5px;
+        background-image: url("../../img/caret.svg");
+        content: "";
+        transform: rotate(180deg);
+        transition: transform 500ms;
+    }
+
+    .is-expanded &::after {
+        transform: rotate(0deg);
+    }
+}
+
+.methodology {
+    width: 70%;
+    margin: 0 auto;
+    
+    @media (max-width: $small-breakpoint){
+        width: 100%;
+    }
+    
+    table {
+        border-collapse: collapse;
+    }
+    
+    tr.header {
+        color: #0c5554;
+        font-weight: bold;
+        //height: 60px;
+
+        td {
+            padding-top: 25px;
+        }
+    }
+
+    tr.odd {
+        background-color: $grey-ededed;
+    } 
+
+    td {
+        //border: 1px solid $grey-c3c6c9;
+        padding: 3px 7px;
+
+        &.number {
+            text-align: right;
+            font-weight: bold;
+        }
+    } 
+
+}
